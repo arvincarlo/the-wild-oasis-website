@@ -10,17 +10,17 @@ export default function Navigation() {
           </Link>
         </li>
         <li>
-          <a href="/about" className="hover:text-accent-400 transition-colors">
+          <Link href="/about" className="hover:text-accent-400 transition-colors">
             About
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/account"
             className="hover:text-accent-400 transition-colors"
           >
             Guest area
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>
