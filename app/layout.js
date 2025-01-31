@@ -1,11 +1,12 @@
 import Navigation from "@/app/_components/Navigation";
 import Logo from "@/app/_components/Logo";
 
-import {Josefin_Sans, Karla, Dosis, Exo_2, Indie_Flower} from "next/font/google";
+import {Josefin_Sans, Karla, Dosis, Exo_2, Indie_Flower, Raleway, Poppins, Quicksand, Nunito, Lato} from "next/font/google";
 
 // run the function
-const font = Exo_2({
+const font = Raleway({
   subsets: ['latin'],
+  weight: "400",
   display: "swap",// this will display the text in default fonts, and once ready it will swap
 });
 
