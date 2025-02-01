@@ -6,6 +6,9 @@ export const metadata = {
     title: "Cabins"
 }
 
+// Setting to dynamic data
+export const revalidate = 3600; // 1 hour
+
 export default function Page() {
     return (
       <div>
