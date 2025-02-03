@@ -1,7 +1,14 @@
+"use client";
+
+import { useReservation } from "../_context/ReservationContext";
+
 function ReservationForm({cabin}) {
 
   // CHANGE
   const { maxCapacity } = cabin;
+
+  const {range} = useReservation();
+  console.log(range);
 
   return (
     <div className='scale-[1.01]'>

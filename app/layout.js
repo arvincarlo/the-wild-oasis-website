@@ -1,5 +1,4 @@
-import Navigation from "@/app/_components/Navigation";
-import Logo from "@/app/_components/Logo";
+import { ReservationProvider } from "./_context/ReservationContext";
 
 import {Josefin_Sans, Karla, Dosis, Exo_2, Indie_Flower, Raleway, Poppins, Quicksand, Nunito, Lato} from "next/font/google";
 
@@ -29,7 +28,9 @@ export default function RootLayout({children}) {
         <Header/>
         <div className="flex-1 px-8 py-12 grid">
           <main className="max-w-7xl mx-auto w-full">
-            {children}
+            <ReservationProvider>
+              {children}
+            </ReservationProvider>
           </main>
         </div>
       </body>

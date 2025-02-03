@@ -1,7 +1,7 @@
 import DateSelector from "./DateSelector";
 import ReservationForm from "./ReservationForm";
 
-import { getSettings, getBookedDatesByCabinId } from "../_lib/data-service";
+import { getBookedDatesByCabinId, getSettings } from "../_lib/data-service";
 
 async function Reservation({cabin}) {
     console.log(cabin.id)
