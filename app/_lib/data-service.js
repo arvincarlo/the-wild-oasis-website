@@ -1,6 +1,7 @@
 import { eachDayOfInterval } from 'date-fns';
 import { supabase } from './supabase';
 import { notFound } from 'next/navigation';
+import { NextResponse } from 'next/server';
 
 /////////////
 // GET
@@ -181,8 +182,10 @@ export async function createBooking(newBooking) {
     console.error(error);
     throw new Error('Booking could not be created');
   }
-
-  return data;
+// Redirect the users
+  //   return NextResponse.redirect(new URL("/about", request.url));
+  // return data;
+  NextResponse.redirect(new URL('/about'));
 }
 
 /////////////
