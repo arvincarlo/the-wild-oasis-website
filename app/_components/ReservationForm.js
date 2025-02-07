@@ -5,12 +5,24 @@ import { useReservation } from "../_context/ReservationContext";
 import { createBooking } from "../_lib/actions";
 import { useFormStatus } from "react-dom";
 
+function setLocalHoursToUTCOffset(date) {
+  const offset = new Date().getTimezoneOffset();
+  const hours = Math.floor(Math.abs(offset) / 60);
+  const minutes = Math.abs(offset) % 60;
+  date?.setHours(hours, minutes);
+  return date;
+}
+
 function ReservationForm({cabin, user}) {
   const {range, resetRange} = useReservation();
   const { maxCapacity, regularPrice, discount, id } = cabin;
 
-  const startDate = range?.from;
-  const endDate = range?.to;
+  // const startDate = range?.from;
+  // const endDate = range?.to;
+   
+  // Then we need to pass the date to this function
+    const startDate = setLocalHoursToUTCOffset(range?.from);
+    const endDate = setLocalHoursToUTCOffset(range?.to);
 
   const numNights = differenceInDays(endDate, startDate);
   const cabinPrice = numNights * (regularPrice - discount);
