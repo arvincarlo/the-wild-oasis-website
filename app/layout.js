@@ -1,4 +1,5 @@
 import { ReservationProvider } from "./_context/ReservationContext";
+import { Analytics } from "@vercel/analytics/next";
 
 import {Josefin_Sans, Karla, Dosis, Exo_2, Indie_Flower, Raleway, Poppins, Quicksand, Nunito, Lato} from "next/font/google";
 
@@ -30,6 +31,7 @@ export default function RootLayout({children}) {
           <main className="max-w-7xl mx-auto w-full">
             <ReservationProvider>
               {children}
+              <Analytics/>
             </ReservationProvider>
           </main>
         </div>
